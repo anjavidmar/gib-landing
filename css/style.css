@@ -275,22 +275,26 @@ header .headline-container {
   -ms-transform: translate(0, -45%);
   transform: translate(0, -45%);
 }
-header .button-container {
+header .transition {
   bottom: 0;
   left: 0;
   position: absolute;
   right: 0;
 }
-header .transition {
+header .transition .transition__inner {
   background-color: #f6d700;
+  left: 0;
+  right: 0;
+  top: 0;
+  -webkit-transform: skewY(-5deg) translate(0, 50%);
+  -ms-transform: skewY(-5deg) translate(0, 50%);
+  transform: skewY(-5deg) translate(0, 50%);
+}
+header .button-container {
   bottom: 0;
   left: 0;
   position: absolute;
   right: 0;
-  width: 100%;
-  -webkit-transform: skewY(-5deg) translate(0, 50%);
-  -ms-transform: skewY(-5deg) translate(0, 50%);
-  transform: skewY(-5deg) translate(0, 50%);
 }
 header .button {
   position: relative;

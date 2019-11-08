@@ -39,4 +39,4 @@ iframe.height = iframe_h;
 // header_h = h - p1_h;
 header_h = h * 0.95;
 // headerHero.style.height = headerHero_h + 'px';
-header.style.height = header_h + 'px';
+header.style.height = h + 'px';
