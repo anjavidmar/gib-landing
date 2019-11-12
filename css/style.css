@@ -134,8 +134,20 @@ p {
   text-transform: uppercase;
 }
 
+.strikethrough {
+  text-decoration: line-through;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
 .text--red {
   color: #f2242a;
+}
+
+.text--black {
+  color: #000;
 }
 
 .text--reg {
@@ -325,9 +337,6 @@ main section:first-child .text-box__black {
 main section:first-child .text-box__black p:last-child {
   margin-bottom: 0;
 }
-main section:first-child .text-box img {
-  display: none;
-}
 main section:first-child .desktop {
   display: none;
 }
@@ -419,7 +428,7 @@ main section:nth-child(5) h2 {
 }
 main section:nth-child(5) h3 {
   margin-bottom: 1.375em;
-  margin-top: 0.625em;
+  margin-top: 1.625em;
 }
 main section:nth-child(5) .offer {
   display: inline-block;
@@ -480,16 +489,79 @@ main section:nth-child(5) .offer__inner ul {
 main section:nth-child(5) .offer__inner ul li:last-child {
   margin-bottom: 0;
 }
-main section:nth-child(5) table {
+main section:nth-child(5) .dodatna-ponudba ul {
+  padding: 0.5em 0;
+}
+main section:nth-child(5) .cenik .mobile {
+  font-size: 0.875em;
+}
+main section:nth-child(5) .cenik .desktop {
   display: none;
+}
+main section:nth-child(5) .table-container {
+  margin: 0 auto;
+  max-width: 1000px;
+  padding: 1em 0;
+}
+main section:nth-child(5) .table {
+  border: 1px solid #e1e1e1;
+  line-height: 1.25;
+  width: 100%;
+}
+main section:nth-child(5) .table tr:nth-child(odd) {
+  background-color: #e1e1e1;
+}
+main section:nth-child(5) .table th, main section:nth-child(5) .table td {
+  padding: 0.5em 0.25em;
+  vertical-align: middle;
+}
+main section:nth-child(5) .table th {
+  font-weight: 700;
+}
+main section:nth-child(5) .catering-pricelist tr th:first-child, main section:nth-child(5) .catering-pricelist tr td:first-child {
+  text-align: left;
+  width: 40%;
+}
+main section:nth-child(5) .catering-pricelist tr th:nth-child(2), main section:nth-child(5) .catering-pricelist tr td:nth-child(2) {
+  text-align: center;
+  width: 25%;
+}
+main section:nth-child(5) .catering-pricelist tr th:nth-child(3), main section:nth-child(5) .catering-pricelist tr td:nth-child(3) {
+  text-align: center;
+  width: 35%;
 }
 
 footer {
-  height: 4em;
-  width: 100%;
+  background-color: peachpuff;
+}
+footer .transition .transition__inner {
+  background-color: #f6d700;
+  left: 0;
+  right: 0;
+  top: 0;
+  -webkit-transform: skewY(-5deg) translate(0, 50%);
+  -ms-transform: skewY(-5deg) translate(0, 50%);
+  transform: skewY(-5deg) translate(0, 50%);
+}
+footer .photos {
+  background-color: #f6d700;
+  overflow: visible;
+  padding: 0 0.25em;
+  position: relative;
 }
 footer img {
   display: block;
+  float: left;
+  padding: 0.5em 0.25em 0;
+  width: 100%;
+}
+footer .small, footer .medium, footer .large {
+  display: none;
+}
+footer .spaceholder {
+  clear: both;
+  height: 0.5em;
+  width: 100%;
 }
 
 @media screen and (min-width: 500px) {
@@ -521,6 +593,16 @@ footer img {
   }
   main section:nth-child(4) .img-collage-container .jump-three {
     margin: 0.5em 0;
+  }
+  main section:nth-child(5) .cenik .mobile {
+    font-size: 1em;
+  }
+
+  footer img {
+    width: 50%;
+  }
+  footer .small {
+    display: block;
   }
 }
 @media screen and (min-width: 550px) {
@@ -560,6 +642,10 @@ footer img {
   main section:first-child .desktop img:first-child {
     margin-bottom: 0.5em;
   }
+
+  footer {
+    background-color: deepskyblue;
+  }
 }
 @media screen and (min-width: 600px) {
   main section:nth-child(5) h2 {
@@ -574,6 +660,21 @@ footer img {
   }
   main section:nth-child(5) .offer__inner ul {
     min-height: 16.75em;
+  }
+  main section:nth-child(5) .cenik .mobile {
+    display: none;
+  }
+  main section:nth-child(5) .cenik .desktop {
+    display: block;
+  }
+  main footer {
+    background-color: deeppink;
+  }
+  main footer img {
+    width: 25%;
+  }
+  main footer .medium {
+    display: block;
   }
 }
 @media screen and (min-width: 675px) {
@@ -683,6 +784,15 @@ footer img {
     min-height: 100%;
     width: 100%;
   }
+
+  footer img {
+    display: block;
+    float: left;
+    width: 20%;
+  }
+  footer .laptop {
+    display: block;
+  }
 }
 @media screen and (min-width: 1125px) {
   h1 {
@@ -755,6 +865,15 @@ footer img {
 @media screen and (min-width: 1245px) {
   main section:nth-child(5) .offer__inner ul {
     min-height: 14.75em;
+  }
+
+  footer img {
+    display: block;
+    float: left;
+    width: 16.66%;
+  }
+  footer .desktop {
+    display: block;
   }
 }
 
