@@ -1,6 +1,20 @@
 var h = window.innerHeight;
 var w = window.innerWidth;
 
+
+var cookies = document.getElementById('cookies');
+var cookies_h = cookies.offsetHeight;
+console.log(cookies, cookies_h);
+var cookiesSpaceholder = document.getElementById('cookies-spaceholder');
+
+// var cookies_left = document.querySelector('.cookies__left');
+// var cookies_right = document.querySelector('.cookies__right');
+// var cookies_right_h = cookies_right.offsetWidth;
+// cookies_left.style.paddingRight = cookies_right_h + 'px';
+
+cookiesSpaceholder.style.height = cookies_h + 'px';
+
+
 // var docLang = document.documentElement.lang;
 var header = document.getElementById('header');
 var header_h = 0;
@@ -40,3 +54,12 @@ iframe.height = iframe_h;
 header_h = h * 0.95;
 // headerHero.style.height = headerHero_h + 'px';
 header.style.height = h + 'px';
+
+function acceptCookies() {
+    cookies.classList.toggle("accepted");
+    cookiesSpaceholder.style.height = 0;
+}
+
+function clearCookies() {
+    alert("Izbrisano.");
+}

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* COMBINATION OF:
    http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
@@ -112,6 +113,10 @@ p {
 
 .align-left {
   text-align: left;
+}
+
+.smallest {
+  font-size: 0.75em;
 }
 
 .smaller {
@@ -492,11 +497,8 @@ main section:nth-child(5) .offer__inner ul li:last-child {
 main section:nth-child(5) .dodatna-ponudba ul {
   padding: 0.5em 0;
 }
-main section:nth-child(5) .cenik .mobile {
-  font-size: 0.875em;
-}
-main section:nth-child(5) .cenik .desktop {
-  display: none;
+main section:nth-child(5) .cenik {
+  display: none !important;
 }
 main section:nth-child(5) .table-container {
   margin: 0 auto;
@@ -532,35 +534,112 @@ main section:nth-child(5) .catering-pricelist tr th:nth-child(3), main section:n
 }
 
 footer {
-  background-color: peachpuff;
+  box-shadow: 0 -2px 4px #ccc;
+  margin-top: 1em;
+  padding: 0.5em 0;
+  text-align: center;
 }
-footer .transition .transition__inner {
-  background-color: #f6d700;
+footer section:nth-child(2) {
+  padding: 0.75em 0 0.5em;
+}
+footer p {
+  margin-bottom: 0;
+}
+footer .logo {
+  max-height: 3em;
+  vertical-align: bottom;
+}
+footer .gib {
+  display: inline-block;
+  padding: 0 0 0.25em 0.5em;
+  vertical-align: bottom;
+}
+footer .social-icon {
+  margin: 0.25em;
+  width: 2.875em;
+}
+footer a:link, footer a:visited {
+  color: #000;
+  text-decoration: none;
+}
+footer a:hover, footer a:active {
+  color: #000;
+  text-decoration: underline;
+}
+footer .payment {
+  height: 2.25em;
+  margin: 0.5em;
+}
+
+#cookies {
+  background-color: rgba(255, 255, 255, 0.75);
+  bottom: 0;
   left: 0;
+  padding: 0.75em;
+  position: fixed;
   right: 0;
-  top: 0;
-  -webkit-transform: skewY(-5deg) translate(0, 50%);
-  -ms-transform: skewY(-5deg) translate(0, 50%);
-  transform: skewY(-5deg) translate(0, 50%);
+  transition: transform 1s;
 }
-footer .photos {
-  background-color: #f6d700;
-  overflow: visible;
-  padding: 0 0.25em;
-  position: relative;
+#cookies:hover {
+  background-color: white;
 }
-footer img {
-  display: block;
-  float: left;
-  padding: 0.5em 0.25em 0;
-  width: 100%;
+#cookies.accepted {
+  -webkit-transform: translate(0, 100%);
+  -ms-transform: translate(0, 100%);
+  transform: translate(0, 100%);
 }
-footer .small, footer .medium, footer .large {
-  display: none;
+#cookies .cookies__inner {
+  margin: 0 auto;
+  max-width: 1250px;
 }
-footer .spaceholder {
-  clear: both;
-  height: 0.5em;
+
+.cookies__left p {
+  margin-bottom: 0;
+}
+.cookies__left p:first-child {
+  margin-bottom: 0.75em;
+}
+
+.cookies__right {
+  text-align: right;
+}
+
+.cookies__link {
+  color: #000;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.cookies__accept {
+  border-radius: 0.25em;
+  background-color: #2b2b2b;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 0.75em;
+  padding: 0.25em 0.5em;
+  vertical-align: bottom;
+}
+
+/*
+#cookies
+>
+    .cookies__inner
+    >
+        .cookies__left
+        >
+            <p class="smallest"><span class="text--bol">Spletna stran uporablja piškotke za boljše delovanje</span></p>
+            <p class="smallest">Z brskanjem po naši spletni strani se strinjate, da lahko uporabljamo piškotke, ki so namenjeni vaši boljši uporabniški izkušnji na naši spletni strani. Za lastne potrebe analitike uporabljamo Google Analytics, ki v ta namen namesti piškotke (<span class="cookies__link" onclick="clearCookies()" data-notice="Izbrisano.">izbriši GA piškotke</span>). <a class="cookies__link" href="https://gib-sport.com/piskotki/" target="_blank">Več o piškotkih</a>.</p>
+        </div><div class="cookies__right">
+            <span class="cookies__accept" onclick="acceptCookies()">STRINJAM SE</span>
+        </div>
+    </div>
+</div>
+*/
+#cookies-spaceholder {
+  box-sizing: content-box;
+  height: 202px;
+  transition: height 1s;
   width: 100%;
 }
 
@@ -596,13 +675,6 @@ footer .spaceholder {
   }
   main section:nth-child(5) .cenik .mobile {
     font-size: 1em;
-  }
-
-  footer img {
-    width: 50%;
-  }
-  footer .small {
-    display: block;
   }
 }
 @media screen and (min-width: 550px) {
@@ -643,8 +715,20 @@ footer .spaceholder {
     margin-bottom: 0.5em;
   }
 
-  footer {
-    background-color: deepskyblue;
+  #cookies .cookies__inner {
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    display: -webkit-flex;
+    display: flex;
+  }
+
+  .cookies__left {
+    padding-right: 1em;
+  }
+
+  .cookies__accept {
+    margin-top: 0;
   }
 }
 @media screen and (min-width: 600px) {
@@ -665,15 +749,6 @@ footer .spaceholder {
     display: none;
   }
   main section:nth-child(5) .cenik .desktop {
-    display: block;
-  }
-  main footer {
-    background-color: deeppink;
-  }
-  main footer img {
-    width: 25%;
-  }
-  main footer .medium {
     display: block;
   }
 }
@@ -698,6 +773,25 @@ footer .spaceholder {
   }
   main section:nth-child(5) .offer__inner ul {
     min-height: 13.75em;
+  }
+
+  footer section:first-child {
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+    width: 37%;
+  }
+  footer section:nth-child(2) {
+    display: inline-block;
+    padding: 0.5em 0;
+    vertical-align: middle;
+    width: 30%;
+  }
+  footer section:last-child {
+    display: inline-block;
+    text-align: right;
+    vertical-align: middle;
+    width: 33%;
   }
 }
 @media screen and (min-width: 850px) {
@@ -784,15 +878,6 @@ footer .spaceholder {
     min-height: 100%;
     width: 100%;
   }
-
-  footer img {
-    display: block;
-    float: left;
-    width: 20%;
-  }
-  footer .laptop {
-    display: block;
-  }
 }
 @media screen and (min-width: 1125px) {
   h1 {
@@ -865,15 +950,6 @@ footer .spaceholder {
 @media screen and (min-width: 1245px) {
   main section:nth-child(5) .offer__inner ul {
     min-height: 14.75em;
-  }
-
-  footer img {
-    display: block;
-    float: left;
-    width: 16.66%;
-  }
-  footer .desktop {
-    display: block;
   }
 }
 
