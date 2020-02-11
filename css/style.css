@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /* COMBINATION OF:
    http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
@@ -74,6 +73,10 @@ h1, h2 {
   font-weight: 800;
 }
 
+h2, h3 {
+  line-height: 1.15;
+}
+
 h3, h4 {
   font-weight: 700;
 }
@@ -105,6 +108,14 @@ h4 {
 p {
   line-height: 1.25;
   margin-bottom: 0.75em;
+}
+
+a, a:link, a:active {
+  color: #05c6ed;
+}
+
+a:visited, a:focus, a:hover {
+  color: #f6d700;
 }
 
 .align-center {
@@ -151,6 +162,10 @@ p {
   color: #f2242a;
 }
 
+.text--blue {
+  color: #04b4d9;
+}
+
 .text--black {
   color: #000;
 }
@@ -177,6 +192,10 @@ p {
 
 .text--bla {
   font-weight: 900;
+}
+
+.text--italic {
+  font-style: italic;
 }
 
 .site {
@@ -296,6 +315,10 @@ header .headline-container {
   -ms-transform: translate(0, -45%);
   transform: translate(0, -45%);
 }
+header h2 {
+  color: #fff;
+  text-shadow: -1px -1px 3px #378aa0, 1px -1px 3px #378aa0, -1px 1px 3px #378aa0, 1px 1px 3px #378aa0;
+}
 header .transition {
   bottom: 0;
   left: 0;
@@ -323,8 +346,11 @@ header .button {
 
 main section:first-child {
   background-color: #f6d700;
+  border-bottom: 1px solid #f6d700;
 }
 main section:first-child .title-box {
+  margin: 0 auto;
+  max-width: 56.875em;
   padding: 1.5em 0 1em;
 }
 main section:first-child .mobile img {
@@ -360,15 +386,23 @@ main section:nth-child(2) .transition .transition__inner {
   transform: skewY(-5deg) translate(0, -50%);
 }
 main section:nth-child(2) h2 {
+  margin: 2.25em auto;
+  max-width: 22em;
+}
+main section:nth-child(2) h3 {
   margin: 2.5em auto 0.75em;
-  max-width: 32em;
+  max-width: 34em;
   position: relative;
+}
+main section:nth-child(2) h3 span {
+  display: inline-block;
+  padding-top: 0.75em;
 }
 main section:nth-child(2) img {
   bottom: 100%;
   left: 0;
   position: absolute;
-  width: 4.5em;
+  width: 5em;
 }
 main section:nth-child(2) .red-text-box {
   background-color: #f2242a;
@@ -376,6 +410,15 @@ main section:nth-child(2) .red-text-box {
   display: inline-block;
   margin: 0 0 1.25em;
   padding: 0.25em 0.5em;
+}
+main section:nth-child(2) p {
+  margin-bottom: 1.75em;
+}
+main section:nth-child(2) p.text--sem {
+  margin-top: 3em;
+}
+main section:nth-child(2) p.text--bol {
+  margin-bottom: 0.25em;
 }
 main section:nth-child(3) {
   overflow: hidden;
@@ -428,7 +471,6 @@ main section:nth-child(4) .button {
   box-shadow: 3px 3px 9px #000;
 }
 main section:nth-child(5) h2 {
-  max-width: 14.125em;
   margin: 1.5em auto 1.25em;
 }
 main section:nth-child(5) h3 {
@@ -440,6 +482,7 @@ main section:nth-child(5) .offer {
   margin-bottom: 1.5em;
   max-width: 375px;
   padding: 0 2px;
+  vertical-align: top;
 }
 main section:nth-child(5) .offer--blue {
   background-color: #05c6ed;
@@ -470,6 +513,9 @@ main section:nth-child(5) .offer__inner .focused {
   color: #000;
   padding: 0.5em;
 }
+main section:nth-child(5) .offer__inner .focused:nth-child(2) {
+  margin-top: 1em;
+}
 main section:nth-child(5) .offer__inner .focused--prihranek p {
   line-height: 1.1;
   margin-bottom: 0;
@@ -482,11 +528,17 @@ main section:nth-child(5) .offer__inner .focused--akcija p {
 main section:nth-child(5) .offer__inner .focused--akcija .bordered {
   border-bottom: 2px solid #000;
 }
+main section:nth-child(5) .offer__inner .focused--akcija .bordered.margined {
+  margin-bottom: 1em;
+}
 main section:nth-child(5) .offer__inner .focused--akcija .button-container {
   padding: 1em 0 0.5em;
 }
 main section:nth-child(5) .offer__inner .focused--akcija .button {
   font-size: 1.0625em;
+}
+main section:nth-child(5) .offer__inner .focused.hidden {
+  display: none;
 }
 main section:nth-child(5) .offer__inner ul {
   padding: 1.25em 0;
@@ -496,6 +548,12 @@ main section:nth-child(5) .offer__inner ul li:last-child {
 }
 main section:nth-child(5) .dodatna-ponudba ul {
   padding: 0.5em 0;
+}
+main section:nth-child(5) .dodatna-ponudba a, main section:nth-child(5) .dodatna-ponudba a:link, main section:nth-child(5) .dodatna-ponudba a:active {
+  color: #04b4d9;
+}
+main section:nth-child(5) .dodatna-ponudba a:visited, main section:nth-child(5) .dodatna-ponudba a:focus, main section:nth-child(5) .dodatna-ponudba a:hover {
+  color: #f2242a;
 }
 main section:nth-child(5) .cenik {
   display: none !important;
@@ -592,25 +650,21 @@ footer .payment {
   margin: 0 auto;
   max-width: 1250px;
 }
-
-.cookies__left p {
+#cookies .cookies__left p {
   margin-bottom: 0;
 }
-.cookies__left p:first-child {
+#cookies .cookies__left p:first-child {
   margin-bottom: 0.75em;
 }
-
-.cookies__right {
+#cookies .cookies__right {
   text-align: right;
 }
-
-.cookies__link {
+#cookies .cookies__link, #cookies a:link, #cookies a:visited, #cookies a:focus, #cookies a:hover, #cookies a:active {
   color: #000;
   cursor: pointer;
   text-decoration: underline;
 }
-
-.cookies__accept {
+#cookies .cookies__accept {
   border-radius: 0.25em;
   background-color: #2b2b2b;
   color: #fff;
@@ -621,21 +675,6 @@ footer .payment {
   vertical-align: bottom;
 }
 
-/*
-#cookies
->
-    .cookies__inner
-    >
-        .cookies__left
-        >
-            <p class="smallest"><span class="text--bol">Spletna stran uporablja piškotke za boljše delovanje</span></p>
-            <p class="smallest">Z brskanjem po naši spletni strani se strinjate, da lahko uporabljamo piškotke, ki so namenjeni vaši boljši uporabniški izkušnji na naši spletni strani. Za lastne potrebe analitike uporabljamo Google Analytics, ki v ta namen namesti piškotke (<span class="cookies__link" onclick="clearCookies()" data-notice="Izbrisano.">izbriši GA piškotke</span>). <a class="cookies__link" href="https://gib-sport.com/piskotki/" target="_blank">Več o piškotkih</a>.</p>
-        </div><div class="cookies__right">
-            <span class="cookies__accept" onclick="acceptCookies()">STRINJAM SE</span>
-        </div>
-    </div>
-</div>
-*/
 #cookies-spaceholder {
   box-sizing: content-box;
   height: 202px;
@@ -693,27 +732,6 @@ footer .payment {
   main section:first-child .title-box p {
     font-size: 1.125em;
   }
-  main section:first-child .mobile {
-    display: none;
-  }
-  main section:first-child .text-box {
-    display: inline-block;
-    padding: 1em 0.5em 1em 0;
-    vertical-align: middle;
-    width: 50%;
-  }
-  main section:first-child .desktop {
-    display: inline-block;
-    padding: 1em 0 1em 0.5em;
-    vertical-align: middle;
-    width: 50%;
-  }
-  main section:first-child .desktop img {
-    display: block;
-  }
-  main section:first-child .desktop img:first-child {
-    margin-bottom: 0.5em;
-  }
 
   #cookies .cookies__inner {
     display: flex;
@@ -722,19 +740,14 @@ footer .payment {
     display: -webkit-flex;
     display: flex;
   }
-
-  .cookies__left {
+  #cookies .cookies__left {
     padding-right: 1em;
   }
-
-  .cookies__accept {
+  #cookies .cookies__accept {
     margin-top: 0;
   }
 }
 @media screen and (min-width: 600px) {
-  main section:nth-child(5) h2 {
-    max-width: 28.25em;
-  }
   main section:nth-child(5) .paketi {
     margin-bottom: 2.125em;
   }
@@ -744,6 +757,13 @@ footer .payment {
   }
   main section:nth-child(5) .offer__inner ul {
     min-height: 16.75em;
+  }
+  main section:nth-child(5) .offer__inner .focused.hidden {
+    display: block;
+    visibility: hidden;
+  }
+  main section:nth-child(5) .offer__inner .focused.still-hidden {
+    display: none;
   }
   main section:nth-child(5) .cenik .mobile {
     display: none;
@@ -794,27 +814,10 @@ footer .payment {
     width: 33%;
   }
 }
-@media screen and (min-width: 850px) {
-  h1 {
-    font-size: 2.875em;
+@media screen and (min-width: 700px) {
+  main section:first-child .mobile {
+    display: none;
   }
-
-  h2 {
-    font-size: 1.875em;
-  }
-
-  h3 {
-    font-size: 1.75em;
-  }
-
-  .transition {
-    height: 100px;
-  }
-
-  .button {
-    font-size: 1.375em;
-  }
-
   main section:first-child .text-box {
     display: block;
     padding: 0 0 1em;
@@ -842,6 +845,28 @@ footer .payment {
     display: block;
     margin-bottom: 0.5em;
   }
+}
+@media screen and (min-width: 850px) {
+  h1 {
+    font-size: 2.875em;
+  }
+
+  h2 {
+    font-size: 1.875em;
+  }
+
+  h3 {
+    font-size: 1.75em;
+  }
+
+  .transition {
+    height: 100px;
+  }
+
+  .button {
+    font-size: 1.375em;
+  }
+
   main section:nth-child(4) .features-container {
     width: 40%;
   }
@@ -940,6 +965,9 @@ footer .payment {
   }
   main section:nth-child(5) .offer__inner ul {
     min-height: 17.75em;
+  }
+  main section:nth-child(5) .offer__inner .focused.still-hidden {
+    display: block;
   }
 }
 @media screen and (min-width: 1180px) {
