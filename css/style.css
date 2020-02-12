@@ -61,6 +61,14 @@ table {
   box-sizing: border-box;
 }
 
+.display-none {
+  display: none !important;
+}
+
+.visibility-hidden {
+  visibility: hidden !important;
+}
+
 img {
   max-width: 100%;
 }
@@ -527,6 +535,7 @@ main section:nth-child(5) .offer__inner .focused--akcija p {
 }
 main section:nth-child(5) .offer__inner .focused--akcija .bordered {
   border-bottom: 2px solid #000;
+  width: 100%;
 }
 main section:nth-child(5) .offer__inner .focused--akcija .bordered.margined {
   margin-bottom: 1em;
