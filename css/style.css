@@ -425,8 +425,14 @@ main section:nth-child(2) p {
 main section:nth-child(2) p.text--sem {
   margin-top: 3em;
 }
+main section:nth-child(2) p.text--sem.uppercase {
+  margin-top: 0;
+}
 main section:nth-child(2) p.text--bol {
   margin-bottom: 0.25em;
+}
+main section:nth-child(2) a, main section:nth-child(2) a:link, main section:nth-child(2) a:active, main section:nth-child(2) a:visited, main section:nth-child(2) a:focus, main section:nth-child(2) a:hover {
+  color: inherit;
 }
 main section:nth-child(3) {
   overflow: hidden;
